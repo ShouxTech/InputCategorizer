@@ -1,8 +1,9 @@
 --!strict
 local UserInputService = game:GetService('UserInputService');
 
-local dependencies = script.Parent.Parent;
-local Charm = require(dependencies:FindFirstChild('charm') or dependencies.Charm);
+local isTypeScriptEnv = script.Name == 'src';
+local dependencies = if isTypeScriptEnv then script.Parent.Parent else script.Parent;
+local Charm = require(isTypeScriptEnv and dependencies.charm or dependencies.Charm);
 
 export type InputCategory = 'KeyboardAndMouse' | 'Gamepad' | 'Touch' | 'Unknown'
 

@@ -34,7 +34,7 @@ InputCategorizer.inputCategoryAtom = Charm.computed(function(): InputCategory
 	end;
 
 	if UserInputService.KeyboardEnabled and UserInputService.MouseEnabled then
-		return 'KeyboardAndMouse'
+		return 'KeyboardAndMouse';
 	elseif UserInputService.TouchEnabled then
 		return 'Touch';
 	elseif UserInputService.GamepadEnabled then
